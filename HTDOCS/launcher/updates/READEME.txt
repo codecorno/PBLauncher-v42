@@ -1,0 +1,4 @@
+Mude a versão para +1 a cada update lançado
+Adicione a nova no settings.conf em 'clientversion'
+patch_1.zip é uma atualização exemplo
+Use apenas arquivos compactados em .zip

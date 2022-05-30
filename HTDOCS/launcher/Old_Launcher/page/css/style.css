@@ -1,0 +1,226 @@
+body
+{
+   background-color: #303030;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+   margin: 0;
+   padding: 0;
+}
+a
+{
+   color: #FFFFFF;
+   text-decoration: none; /* Отменяем подчеркивание у ссылки */
+}
+a:visited
+{
+   color: #FFFFFF;
+}
+a:active
+{
+   color: #FFFFFF;
+}
+a:hover
+{
+   color: #FFFFFF;
+   text-decoration: underline;
+}
+#bg
+{
+   border: 0px #000000 solid;
+     position:absolute;
+
+    
+ 
+   background: url() 100% ; /* Добавляем фон */
+}
+#bg_news
+{
+   border: 0px #000000 solid;
+    position:absolute;right:0px;
+    bottom:0%;
+   
+   
+   background: url() 100%; /* Добавляем фон */
+}
+
+#last_news 
+{bottom:33%;
+      background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: right;
+   position:absolute;right:-340px;width:714px;height:16px;z-index:5;text-align:left;
+   
+   
+    
+}
+#last_news div
+{
+   text-align: left;
+}
+#server_status 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: center;
+   position:absolute;left:0px;top:123px;width:714px;height:15px;text-align:center;z-index:4;
+}
+#server_status div
+{
+   text-align: center;
+}
+#new1_name 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+    bottom:24%;
+   text-align: left;
+   position:absolute;right:-335px;width:714px;height:16px;z-index:5;text-align:left;
+}
+#new1_name div
+{
+   text-align: left;
+}
+#new1_data 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+     bottom:24%;
+   text-align: left;
+  position:absolute;left:610px;width:78px;height:16px;z-index:6;text-align:left;
+}
+#new1_data div
+{
+   text-align: left;
+}
+#new2_name 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+    bottom:20%;
+   text-align: left;
+   position:absolute;right:-335px;width:714px;height:16px;z-index:8;text-align:left;
+}
+#new2_name div
+{
+   text-align: left;
+}
+#new2_data 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+    bottom:20%;
+   text-align: left;
+   position:absolute;left:610px;width:78px;height:16px;z-index:9;text-align:left;
+}
+#new2_data div
+{
+   text-align: left;
+}
+#new3_name 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+    bottom:16%;
+   text-align: left;
+   position:absolute;right:-335px;width:714px;height:16px;z-index:11;text-align:left;
+}
+#new3_name div
+{
+   text-align: left;
+}
+#new3_data 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+    bottom:16%;
+   text-align: left;
+   position:absolute;left:610px;width:78px;height:16px;z-index:12;text-align:left;
+}
+#new3_data div
+{
+   text-align: left;
+}
+#new4_name 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+    bottom:12%;
+   text-align: left;
+   position:absolute;right:-335px;width:714px;height:16px;z-index:13;text-align:left;
+}
+#new4_name div
+{
+   text-align: left;
+}
+#new4_data 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+    bottom:12%;
+   text-align: left;
+   position:absolute;left:610px;width:78px;height:16px;z-index:14;text-align:left;
+}
+#new4_data div
+{
+   text-align: left;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+
+@-moz-keyframes scroll {
+    0% {
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -moz-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0)
+    }
+}
+
+
+.marquee {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+	color:#FFFFFF;font-family:Arial;font-size:15px;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    -webkit-animation: scroll 9s infinite linear;
+    -moz-animation: scroll 9s infinite linear;
+    animation: scroll 9s infinite linear;
+}
