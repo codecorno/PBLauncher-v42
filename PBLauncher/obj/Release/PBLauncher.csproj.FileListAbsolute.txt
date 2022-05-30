@@ -1,0 +1,14 @@
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\bin\Release\PBLauncher.exe.config
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\bin\Release\PBLauncher.exe
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\bin\Release\PBLauncher.pdb
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\bin\Release\launcher_core.dll
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.csproj.AssemblyReference.cache
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.csproj.SuggestedBindingRedirects.cache
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.MainForm.resources
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.PleaseWait.resources
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.Properties.Resources.resources
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.csproj.GenerateResource.cache
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.csproj.CoreCompileInputs.cache
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.csproj.CopyComplete
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.exe
+C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Release\PBLauncher.pdb
