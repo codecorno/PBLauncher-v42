@@ -12,7 +12,7 @@
 # Recursos
 * Sistema de atualização dos arquivos do jogo
 * Sistema de atualização do PBLauncher.exe, usando Assembly.ProductVersion
-* Inicialização do jogo com suporte a o Xigncode_Loader
+* Inicialização do jogo com suporte ao Xigncode_Loader
 * Sistema de mensagem personalizada para manutenções ou alertas de aberturas
 * LauncherKey via host
 * Configuração do launcher simples e fácil, tudo em um arquivo
@@ -59,7 +59,7 @@ patch_1.zip
 
 
 IMPORTANTE:
-NUNCA VOLTE uma versão, tipo 10 voltar para 9, isso resetará a ordem e causar erros!
+NUNCA VOLTE uma versão, tipo 10 voltar para 9, isso resetará a ordem e causará erros!
 NÃO altere a versão do 'clientversion' sem ter o arquivo com a versão também!
 NUNCA esqueça da config.zpt ou erre a versão, causará loop de atualização infinita.
 Siga a contagem em ordem (1, 2, 3, 4...) 
