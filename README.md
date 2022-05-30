@@ -1,5 +1,5 @@
 # PBLauncher Public Version - Easy setup
-> It was not the last version of PBLauncher used by Project Elite - Não foi a última versão do PBLauncher usado pelo Project Elite
+> Public launcher dedicated to private servers - Launcher público dedicado a servidores privados
 
 # Recursos
 * Sistema de atualização dos arquivos do jogo
