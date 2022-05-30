@@ -1,3 +1,9 @@
+<p align="center">
+    <a href="https://github.com/codecorno/PBLauncher/tree/master/Loading">
+        <img src="https://github.com/codecorno/PBLauncher/blob/master/Loading/PointBlank_intro.bmp" />
+    </a>
+</p>
+
 # PBLauncher Public Version - Easy setup
 > Public launcher dedicated to private servers | Launcher público dedicado a servidores privados
 
