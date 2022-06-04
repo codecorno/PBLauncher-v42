@@ -15,6 +15,8 @@
 * Inicialização do jogo com suporte ao Xigncode_Loader
 * Sistema de mensagem personalizada para manutenções ou alertas de aberturas
 * LauncherKey via host
+* Sisitema de detecção de programa malicioso (pode ser aprimorado)
+* Sistema de banir acesso ao launcher (pode ser aprimorado)
 * Configuração do launcher simples e fácil, tudo em um arquivo
 
 # Configurações
