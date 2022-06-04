@@ -1,7 +1,7 @@
 ﻿/*
  * Arquivo: MainForm.cs
  * Criado em: 23-11-2021
- * Última modificação: 30-05-2022
+ * Última modificação: 04-06-2022
  */
 using Core;
 using Ionic.Zip;
@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,6 +35,10 @@ namespace PBLauncher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+
+            ClientVersionn.Text = "ClientVersion: " + Connect._version;
+            LauncherConfig.Visible = false;
             WEB_Announce.Refresh();
             Logger.Log("[<<] Verificação do sistema concluída.");
             LTitulo.Text = Instancia._strings.LOADING;
@@ -61,17 +66,19 @@ namespace PBLauncher
         #region Buttons
         private void ConfigPBox_Click(object sender, EventArgs e)
         {
-            if (!Updat)
-            {
-                try
-                {
-                    Process.Start("PBConfig.exe");
-                }
-                catch
-                {
-                    MessageBox.Show(Instancia._strings.CONFIG_ERROR, Connect.GameName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
+            GameVersionn.Text = "GameVersion: " + Connect._gamev;
+            ClientVersionn.Text = "ClientVersion: " + Connect._version;
+            ClientFilesCountSERVER.Text = "ClientFilesCount[S_Side}: " + Connect._fcountCompare;
+            ClientFilesCountCLIENT.Text = "ClientFilesCount[C_Side]: " + Directory.GetFiles(Application.StartupPath, "*.*", SearchOption.AllDirectories).Count().ToString();
+            LauncherVersionn.Text = "LauncherVersion: " + Application.ProductVersion;                      
+
+            LauncherConfig.Visible = true;
+            StartPBox.Enabled = false;
+            CheckPBox.Enabled = false;
+            WEB_Announce.Visible = false;
+            StartPBox.Image = Resources.started;
+            CheckPBox.Image = Resources._checked;
+
         }
         #endregion
 
@@ -191,6 +198,9 @@ namespace PBLauncher
             else if (LVersion == AVersion)
             {
                 Logger.Log("A cliente está atualizada.");
+                Logger.Log("[!] " + ClientVersionn.Text);
+                Logger.Log("[!] ClientFilesCount: " + Directory.GetFiles(Application.StartupPath, "*.*", SearchOption.AllDirectories).Count().ToString());
+                Logger.Log("[!] ClientFilesCount[SERVER]: " + Connect._fcountCompare);
                 Logger.Log("Versão: " + AVersion + "/" + LVersion);
                 LArquivo.Visible = false;
                 LTitulo.Text = Instancia._strings.GAME_IS_UPDATE;
@@ -518,22 +528,112 @@ namespace PBLauncher
 
         }
 
-        private void PBDetect_Tick(object sender, EventArgs e)
+        private void BAN()
         {
-            
-            Process[] processes = Process.GetProcessesByName("PointBlank");
-            if (processes.Length == 0)
+            if (File.Exists(string.Concat(Application.StartupPath, "\\Gui\\ban.ban")))
             {
-                //Jogo fechado
-                Logger.Log("[><] O Jogo foi finalizado");
+                Logger.Log("[XX] Usuário banido permanentemente do launcher.");
+                MessageBox.Show(Instancia._strings.AUTH_ACC_BANNED, Connect.GameName);
                 Close();
             }
             else
             {
-                //Jogo aberto
-                Console.WriteLine("Running");
+
+            }
+        }
+
+        private void PBDetect_Tick(object sender, EventArgs e)
+        {
+            
+           try
+            {
+                Process[] PB = Process.GetProcessesByName("PointBlank");
+                if (PB.Length == 0)
+                {
+                    //Jogo fechado
+                    Logger.Log("[><] O Jogo foi finalizado");
+                    Close();
+
+                }
+                else
+                {
+                    //Jogo aberto
+                    try
+                    {
+                        Process[] CE = Process.GetProcessesByName("cheatengine-x86_64-SSE4-AVX2");
+                        if (CE.Length == 0)
+                        {
+                            //CE fechado      
+
+                        }
+                        else
+                        {
+                            //CE aberto
+                            WebClient banWEBCLIENT = new WebClient();
+                            banWEBCLIENT.DownloadFile(Connect._banPermURL, (Application.StartupPath + "\\Gui\\ban.ban"));
+
+                            //            Logger.Log("[><] O Jogo foi finalizado");
+                            var PBK = Process.GetProcessesByName("PointBlank");
+                            foreach (var pb in PBK)
+                                pb.Kill();
+                        }
+
+                    }
+
+                    catch (Exception arg)
+                    {
+                        // Logger.Log("[!] Erro [" + arg.Message + "]");
+                    }
+
+                }
+            }
+            catch (Exception arg)
+            {
+               // Logger.Log("[!] Exception [" + arg.Message + "]");
             }
 
+
+        }
+
+       
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LauncherConfig.Visible = false;
+            StartPBox.Enabled = true;
+            CheckPBox.Enabled = true;
+            WEB_Announce.Visible = true;
+            StartPBox.Image = Resources.start;
+            CheckPBox.Image = Resources.check;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            OkConfig.Image = Resources.Ok_1;
+        }
+
+        private void OkConfig_MouseMove(object sender, MouseEventArgs e)
+        {
+            OkConfig.Image = Resources.Ok_2;
+        }
+
+        private void OkConfig_MouseDown(object sender, MouseEventArgs e)
+        {
+            OkConfig.Image = Resources.Ok_3;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (!Updat)
+            {
+                try
+                {
+                    Process.Start("PBConfig.exe");
+                }
+                catch
+                {
+                    MessageBox.Show(Instancia._strings.CONFIG_ERROR, Connect.GameName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void Buttons_Visible(bool Start, bool Check, bool Update)
