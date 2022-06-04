@@ -1,7 +1,7 @@
 ﻿/*
  * Arquivo: PleaseWait.cs
  * Criado em: 23-11-2021
- * Última modificação: 23-11-2021
+ * Última modificação: 04-06-2022
  */
 using Core;
 using Ionic.Zip;
@@ -11,6 +11,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,15 +27,20 @@ namespace PBLauncher
 
         private async void PleaseWait_Load(object sender, EventArgs e)
         {
-           
             lb_loading.Text = Instancia._strings.LOADING;
             Logger.Log("");
             Logger.Log("[<>] PBLauncher [" + Connect.GameName + "] iniciado.");
-            Logger.Log("[!] Launcher Versão:" + Application.ProductVersion);
+            Logger.Log("[!] Launcher Versão: " + Application.ProductVersion);
+            Logger.Log("[-] MachineName: " + Environment.MachineName);
+            Logger.Log("[-] UserName: " + Environment.UserName);
+            Logger.Log("[X] Is64BitOperatingSystem: " + Environment.Is64BitOperatingSystem);
+            Logger.Log("[X] Is64BitProcess: " + Environment.Is64BitProcess);
+
             if (!CheckLF())
                 Close();
             else
             {
+                BAN();
                 await Task.Delay(5);
                 lb_loading.Text = Instancia._strings.CONNECTING_TO_SERVER;
                 Status(await Connect.GetHostInfo());
@@ -46,6 +52,21 @@ namespace PBLauncher
         /// Verifica se já existe um processo do launcher ou do jogo aberto
         /// </summary>
         /// <returns></returns>
+        /// 
+
+        private void BAN()
+        {
+            if (File.Exists(string.Concat(Application.StartupPath, "\\Gui\\ban.ban")))
+            {
+                Logger.Log("[XX] Usuário banido permanentemente do launcher.");
+                MessageBox.Show(Instancia._strings.AUTH_ACC_BANNED, Connect.GameName);
+                Close();
+            }
+            else
+            {
+
+            }
+        }
         private bool CheckLF()
         {
             lb_loading.Text = Instancia._strings.CHECK_IMPORTANT_FILES;
@@ -246,6 +267,33 @@ namespace PBLauncher
                 Application.Restart();
             }
 
+        }
+
+        private void CEDetect_Tick(object sender, EventArgs e)
+        {
+           
+         try
+            {
+                Process[] processes = Process.GetProcessesByName("cheatengine-x86_64-SSE4-AVX2");
+                if (processes.Length == 0)
+                {
+                    //CE fechado      
+
+                }
+                else
+                {
+                    //CE aberto
+                    CEDetect.Enabled = false;
+                    WebClient banWEBCLIENT = new WebClient();
+                    banWEBCLIENT.DownloadFile(Connect._banPermURL, (Application.StartupPath + "\\Gui\\ban.ban"));
+                }
+
+            }
+               
+                 catch (Exception arg)
+            {
+               // Logger.Log("[!] Erro [" + arg.Message + "]");
+            }
         }
     }
 }

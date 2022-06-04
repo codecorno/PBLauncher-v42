@@ -31,9 +31,11 @@ namespace PBLauncher
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PleaseWait));
             this.panel_label = new System.Windows.Forms.Panel();
             this.lb_loading = new System.Windows.Forms.Label();
+            this.CEDetect = new System.Windows.Forms.Timer(this.components);
             this.panel_label.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +62,12 @@ namespace PBLauncher
             this.lb_loading.Text = "NonString";
             this.lb_loading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // CEDetect
+            // 
+            this.CEDetect.Enabled = true;
+            this.CEDetect.Interval = 1;
+            this.CEDetect.Tick += new System.EventHandler(this.CEDetect_Tick);
+            // 
             // PleaseWait
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,6 +92,7 @@ namespace PBLauncher
 
         private System.Windows.Forms.Panel panel_label;
         private System.Windows.Forms.Label lb_loading;
+        private System.Windows.Forms.Timer CEDetect;
     }
 }
 
