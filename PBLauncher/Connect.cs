@@ -1,7 +1,7 @@
 ﻿/*
  * Arquivo: Connect.cs
  * Criado em: 23-11-2021
- * Última modificação: 23-11-2021
+ * Última modificação: 04-06-2022
  */
 using Core;
 using PBLauncher.Utils;
@@ -28,7 +28,7 @@ namespace PBLauncher
 
         #region Modelo e processamento
         public static HostStatus _state = HostStatus.OFFLINE;
-        public static string _launcherVer, _message, _webURL, _upURL, _userList, _fileURL;
+        public static string _launcherVer, _message, _webURL, _upURL, _userList, _fileURL, _gamev, _fcountCompare, _banPermURL;
         public static int _version;
         public static bool  _keyHost, _useXCLoader;
         public static long _launcherKey;
@@ -85,6 +85,15 @@ namespace PBLauncher
                                     break;
                                 case "use_xingload":
                                     _useXCLoader = bool.Parse(Get.Conf(line, id));
+                                    break;
+                                case "GameVersionn":
+                                    _gamev = Get.Conf(line, id);
+                                    break;
+                                case "FilesCountCompare":
+                                    _fcountCompare = Get.Conf(line, id);
+                                    break;
+                                case "BanPerm":
+                                    _banPermURL = Get.Conf(line, id);
                                     break;
                             }
                         }
