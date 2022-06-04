@@ -12,10 +12,6 @@ C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Debug\PBLauncher.csproj.CoreCom
 C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Debug\PBLauncher.csproj.CopyComplete
 C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Debug\PBLauncher.exe
 C:\Users\micha\Desktop\PBLauncher\PBLauncher\obj\Debug\PBLauncher.pdb
-C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\PBLauncher.exe.config
-C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\PBLauncher.exe
-C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\PBLauncher.pdb
-C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\launcher_core.dll
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.csproj.AssemblyReference.cache
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.csproj.SuggestedBindingRedirects.cache
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.MainForm.resources
@@ -23,6 +19,10 @@ C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.Pleas
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.Properties.Resources.resources
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.csproj.GenerateResource.cache
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.csproj.CoreCompileInputs.cache
-C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.csproj.CopyComplete
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.exe
 C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.pdb
+C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\PBLauncher.exe.config
+C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\PBLauncher.exe
+C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\PBLauncher.pdb
+C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\bin\Debug\launcher_core.dll
+C:\Users\micha\Desktop\PBLauncher - SOURCE\PBLauncher\obj\Debug\PBLauncher.csproj.CopyComplete
