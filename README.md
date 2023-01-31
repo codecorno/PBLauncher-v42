@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    PBLauncher for PBServer 3.24
+    PBLauncher for PBServer v3.24
     <br />
     <a href="https://github.com/codecorno/PBLauncher-v3.24"><strong>Acessar »</strong></a>
     <br />
